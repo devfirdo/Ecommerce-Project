@@ -1,0 +1,39 @@
+{% extends "customer/navbarcustomer.html" %}
+{% block content  %}
+<style>
+  .custom-card {
+    margin-bottom: 2rem;
+    margin-left : 5rem; 
+  }
+
+  .custom-card .card-body {
+    padding: 1rem; 
+  }
+  h1 {
+    text-align : center;
+  }
+</style>
+<center><h1>All Products</h1></center>
+<div class = 'container-fluid'>
+  <div class="row">
+    {% for i in pdt %}
+      <div class="col-md-2 custom-card">
+        <div class="card" style="width: 15rem;">
+          <img src="{{ i.product_image.url }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{i.product_name}}</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{i.product_description}}</li>
+            <li class="list-group-item">{{i.product_price}}</li>
+          </ul>
+          <div class="card-body">
+            <a href="{% url 'add_to_cart' i.id %}" class="btn btn-primary">Add To Cart</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

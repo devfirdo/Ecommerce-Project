@@ -1,0 +1,76 @@
+{% include "navbarhome.html" %}
+{% load static %}
+{% block content %}
+<style>
+    .reviews-container {
+        background-color: #f8f8f8;
+        padding: 50px;
+        text-align: center;
+      }
+  
+      .testimonial {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+  
+      .testimonial-image {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        margin-bottom: 10px;
+      }
+  
+      .testimonial-author {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+      }
+  
+      .testimonial-text {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 10px;
+      }
+      
+</style>
+<div class="reviews-container">
+    <h2>Customer Reviews</h2>
+
+    <div class="testimonial">
+      <img class="testimonial-image" src="{% static 'images/rev2.jpg' %}" alt="Customer 1">
+      <div class="testimonial-author">John Doe</div>
+      <div class="testimonial-text">I am extremely satisfied with the quality and style of TrendHaven's clothing. The customer service was fantastic, and the delivery was quick.!</div>
+    </div>
+
+    <div class="testimonial">
+      <img class="testimonial-image" src="{% static 'images/rev1.jpg' %}" alt="Customer 2">
+      <div class="testimonial-author">Jane Smith</div>
+      <div class="testimonial-text">The variety of clothing options at TrendHaven is impressive. I found unique pieces that I haven't seen elsewhere.</div>
+    </div>
+
+    <div class="testimonial">
+      <img class="testimonial-image" src="{% static 'images/rev4.png' %}" alt="Customer 2">
+      <div class="testimonial-author">Stalin</div>
+      <div class="testimonial-text">The ordering process was seamless, and my items arrived well-packaged and on time. The clothes exceeded my expectations in terms of both style and quality</div>
+    </div>
+
+    <div class="testimonial">
+      <img class="testimonial-image" src="{% static 'images/rev3.jpg' %}" alt="Customer 2">
+      <div class="testimonial-author">Aurora</div>
+      <div class="testimonial-text">TrendHaven's customer service team went above and beyond to help me with an issue. They were responsive and resolved my concern promptly.</div>
+    </div>
+
+    
+
+  </div>
+
+{% endblock %}
+
+{% include "footer.html" %}

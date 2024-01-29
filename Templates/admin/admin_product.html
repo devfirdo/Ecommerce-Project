@@ -1,0 +1,111 @@
+{% extends "admin/navbaradmin.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    h1 {
+        text-align: center;
+        color: #343a40;
+    }
+
+    div {
+        font-size: 20px;
+    }
+
+    form {
+        width: 80%;
+        max-width: 400px;
+        padding: 20px;
+        border: 1px solid #ced4da;
+        border-radius: 10px;
+        background-color: #fff;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td {
+        padding: 10px;
+        vertical-align: top;
+    }
+
+    select, input[type="text"], input[type="number"], input[type="file"] {
+        width: calc(100% - 16px);
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background: linear-gradient(to right, #ffffff, #808080);
+        color: #fff;
+        font-size: 17px;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.1s ease;
+    }
+
+    input[type="submit"]:hover {
+        background: linear-gradient(to right, #808080, #ffffff);
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .messages {
+        margin-top: 10px;
+        color: #dc3545;
+    }
+</style>
+
+<center><h1>Add Product</h1></center>
+<div class='container-fluid'>
+    <form action="{% url 'register_product' %}" method='post' enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    <select name="sel" id="">
+                        {% for i in cat %}
+                        <option value="{{i.id}}">{{i.category_name}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder='Product Name' name="pdt_name" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder='Description' name="pdt_desc" required></td>
+            </tr>
+            <tr>
+                <td><input type="number" placeholder='Product Price' name="pdt_price" required></td>
+            </tr>
+            <tr>
+                <td><input type="file" name='pdt_image' accept='image/*' required></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Add Product"></td>
+            </tr>
+            <tr class="messages">
+                {% for i in messages %}
+                    {{ i }}
+                {% endfor %}
+            </tr>
+        </table>
+    </form>
+</div>
+{% endblock %}

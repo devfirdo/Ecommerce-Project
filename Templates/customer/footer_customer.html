@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <footer class="text-dark mt-4 pt-5 pb-4" style="background-color: lightgray;">
+        <div class="container text-center text-md-left">
+          <div class="row text-center text-md-left">
+              <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                  <h5 class="text-uppercase mb-4 font-weight-bold text-warning">TrendHaven</h5>
+                  <p>Empowering lives since 2015, we strive for excellence and commitment. Our dedication is reflected in every stitch,
+                     ensuring the perfect blend of fashion and comfort.</p>
+
+              </div>
+              <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mt-3">
+                  <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Products</h5>
+                  <p>
+                    <a href="mens.html" class="text-dark" style="text-decoration:none;">Outfits</a>
+                  </p>
+                  <p>
+                    <a href="#" class="text-dark" style="text-decoration:none;">Jewellaries</a>
+                  </p>
+                  <p>
+                    <a href="#" class="text-dark" style="text-decoration:none;">Bags</a>
+                  </p>
+                  <p>
+                    <a href="#" class="text-dark" style="text-decoration:none;">Rings</a>
+                  </p>
+              </div>
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                  <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Account</h5>
+                  <p>
+                    <a href="{% url 'login' %}" class="text-dark" style="text-decoration:none;">Login</a>
+                  </p>
+                  <p>
+                    <a href="{% url 'signup' %}" class="text-dark" style="text-decoration:none;">SignUp</a>
+                  </p>
+                  <p>
+                    <a href="{% url 'aboutus' %}" class="text-dark" style="text-decoration:none;">About Us</a>
+                  </p>
+              </div>
+              <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mt-3">
+                  <h5 class="text-uppercase mb-4 font-weight-bold text-warning">ContactUS</h5>
+                  <p>
+                    <i class="fas fa-home mr-3"></i>Kollam,Kerala India
+                  </p>
+                  <p>
+                    <i class="fas fa-envelope mr-3"></i>jannathulfirdouse@gmail.com
+                  </p>
+                  <p>
+                    <i class="fas fa-phone mr-3"></i>+91 9605218867
+                  </p>
+                  <p>
+                    <i class="fas fa-print mr-3"></i>+0474 767 333
+                  </p>
+              </div>
+          </div>
+          <hr class="mb-4">
+
+          <div class="row align-items-center"> 
+              <div class="col-md-7 col-lg-8">
+                  <p>Copyright @2023 All rights reserved by:
+                    <a href="#" style="text-decoration:none;"><b class="text-warning">Jannathul Firdouse</b></a>
+                  </p>
+              </div>
+              <div class="col-md-5 col-lg-4">
+                  <div class="tetx-center text-md-right"></div>
+                  <ul class="list-unstyled list-inline">
+                    <li class="list-inline-item">
+                      <a href="#" class="btn-floating btn-sm text-dark" style="font-size:23px;"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="btn-floating btn-sm text-dark" style="font-size:23px;"><i class="fab fa-youtube"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="btn-floating btn-sm text-dark" style="font-size:23px;"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="btn-floating btn-sm text-dark" style="font-size:23px;"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="btn-floating btn-sm text-dark" style="font-size:23px;"><i class="fab fa-reddit"></i></a>
+                    </li>
+                  </ul>
+              </div>
+          </div>
+
+        </div>
+      </footer>
+      {% block content %}
+      {% endblock %}
+</body>
+</html>

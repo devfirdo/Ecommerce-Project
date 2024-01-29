@@ -1,0 +1,122 @@
+{% extends "customer/navbarcustomer.html" %}
+{% load static %}
+{% block content  %}
+<h1>customer home</h1>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        color: #343a40;
+        text-align: center;
+       
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+</style>
+
+<h1>Welcome {{user.username}} <img src="{{cust.customer_image.url}}" alt=""> to Customer Home</h1>
+<p>
+    Thank you for choosing our services. Our Website Provides High Quality Products for all customers
+    with Quality Services as well . 
+</p>
+
+<p>
+    Explore our website to find amazing products and enjoy a seamless shopping experience. If you have any
+    questions or need assistance, feel free to reach out to our customer support team.
+</p>
+
+<footer class="text-dark mt-4 pt-5 pb-4" style="background-color: lightgray;">
+    <div class="container text-center text-md-left">
+      <div class="row text-center text-md-left">
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4 font-weight-bold text-warning">TrendHaven</h5>
+              <p>Empowering lives since 2015, we strive for excellence and commitment. Our dedication is reflected in every stitch,
+                 ensuring the perfect blend of fashion and comfort.</p>
+
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Products</h5>
+              <p>
+                <a href="mens.html" class="text-dark" style="text-decoration:none;">Outfits</a>
+              </p>
+              <p>
+                <a href="#" class="text-dark" style="text-decoration:none;">Jewellaries</a>
+              </p>
+              <p>
+                <a href="#" class="text-dark" style="text-decoration:none;">Bags</a>
+              </p>
+              <p>
+                <a href="#" class="text-dark" style="text-decoration:none;">Rings</a>
+              </p>
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Account</h5>
+              <p>
+                <a href="{% url 'login' %}" class="text-dark" style="text-decoration:none;">Login</a>
+              </p>
+              <p>
+                <a href="{% url 'signup' %}" class="text-dark" style="text-decoration:none;">SignUp</a>
+              </p>
+              <p>
+                <a href="{% url 'aboutus' %}" class="text-dark" style="text-decoration:none;">About Us</a>
+              </p>
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4 font-weight-bold text-warning">ContactUS</h5>
+              <p>
+                <i class="fas fa-home mr-3"></i>Kollam,Kerala India
+              </p>
+              <p>
+                <i class="fas fa-envelope mr-3"></i>jannathulfirdouse@gmail.com
+              </p>
+              <p>
+                <i class="fas fa-phone mr-3"></i>+91 9605218867
+              </p>
+              <p>
+                <i class="fas fa-print mr-3"></i>+0474 767 333
+              </p>
+          </div>
+      </div>
+      <hr class="mb-4">
+
+      <div class="row align-items-center"> 
+          <div class="col-md-7 col-lg-8">
+              <p>Copyright @2023 All rights reserved by:
+                <a href="#" style="text-decoration:none;"><b class="text-warning">Jannathul Firdouse</b></a>
+              </p>
+          </div>
+          <div class="col-md-5 col-lg-4">
+              <div class="tetx-center text-md-right"></div>
+              <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                  <a href="#" class="btn-floating btn-sm text-dark" style="font-size:23px;"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="btn-floating btn-sm text-dark" style="font-size:23px;"><i class="fab fa-youtube"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="btn-floating btn-sm text-dark" style="font-size:23px;"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="btn-floating btn-sm text-dark" style="font-size:23px;"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="btn-floating btn-sm text-dark" style="font-size:23px;"><i class="fab fa-reddit"></i></a>
+                </li>
+              </ul>
+          </div>
+      </div>
+
+    </div>
+  </footer>
+
+{% endblock  %}
+

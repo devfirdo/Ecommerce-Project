@@ -1,0 +1,109 @@
+{% extends "admin/navbaradmin.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    h1 {
+        text-align: center;
+        color: #343a40;
+    }
+
+    table {
+        width: 90%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    tr:hover {
+        background-color: gray;
+    }
+
+    th, td {
+        border: 1px solid #ced4da;
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: black;
+        color: #fff;
+    }
+
+    img {
+        max-width: 100px;
+        max-height: 100px;
+        width: auto;
+        height: auto;
+    }
+
+    a {
+        color: #dc3545;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .messages {
+        margin-top: 10px;
+        color: #dc3545;
+    }
+
+    @media (max-width: 768px) {
+        table {
+            width: 100%;
+        }
+
+        th, td {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        th, td {
+            text-align: left;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+</style>
+
+<center><h1>View Product</h1></center>
+<div class='container-fluid'>
+    <table>
+        <tr>
+            <th>PRODUCT NAME</th>
+            <th>DESCRIPTION</th>
+            <th>PRICE</th>
+            <th>CATEGORY</th>
+            <th>IMAGE</th>
+            <th>ACTION</th>
+        </tr>
+        {% for i in pro %}
+            <tr>
+                <td>{{ i.product_name }}</td>
+                <td>{{ i.product_description }}</td>
+                <td>{{ i.product_price }}</td>
+                <td>{{ i.categoryf_name.category_name }}</td>
+                <td><img src="{{ i.product_image.url }}" alt="Product Image"></td>
+                <td><a href="{% url 'product_delete' i.id %}">DELETE</a></td>
+            </tr>
+        {% endfor %}
+        <tr class="messages">
+            <td colspan="6">
+                {% for i in messages %}
+                    {{i}}
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+</div>
+
+{% endblock %}
